@@ -1,0 +1,148 @@
+/* 
+Krav för projektet:
+
+HTML-struktur: Använd semantiska HTML-element såsom <header>, <section>, <nav>, <article>, och <footer> för att strukturera din webbplats.
+
+Grundläggande CSS: Skapa en enkel, snygg design genom att styla din HTML med grundläggande CSS-regler (färger, typsnitt, margin, padding).
+
+Responsiv Design: Använd CSS media queries för att göra webbplatsen responsiv. Skapa minst tre olika layouter för mobila enheter, surfplattor och desktops.
+
+CSS Box Model: Utnyttja margin, padding och border för att skapa korrekt avstånd och struktur.
+
+Positionering: Använd grundläggande positioneringsmetoder (static, relative, absolute) för att placera element på sidan.
+*/
+/* färger, typsnitt, margin, padding */
+/* margin, padding och border */
+/* positionering static, relative, absolute */
+/* Responsiv design */
+
+
+
+/* gemensam */
+header, main, footer {
+    position: relative;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+nav.mobil button {
+    width: 96px;
+    height: 32px;
+}
+body {
+    max-width: 600px;
+    margin 8px 8px 8px 12px;
+    background-color: burlywood;
+}
+header, footer {
+    background-color: brown;
+}
+html {
+    background-color: whitesmoke;
+}
+main nav {
+    background-color: yellowgreen;
+}
+header, footer, h1, h2, h3, h4 {
+    font-family: "Comic Sans MS", sans-serif;
+}
+main {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h1 {
+    color: rgb(167, 167, 36);
+}
+footer p {
+    position: static;
+}
+
+/* gemensam: färger, typsnitt
+olika: margin, padding, position */
+
+
+/* mobil */
+@media (width <= 425px) {
+    nav.mobil {
+        position: absolute;
+        top: 4px;
+        right: 0;
+    }
+    nav.dator {
+        display: none;
+    }
+    main nav {
+        margin: 0px;
+        padding: 0px;
+        background-color: unset;
+    }
+    main nav h3 {
+        margin-top: 0px;
+    }
+}
+
+/* surfplatta */
+@media (425px < width <= 768px) {
+    nav.mobil {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    nav.dator {
+        display: none;
+    }
+    body {
+        margin: 8px auto 12px;
+    }
+    main nav {
+        margin: 8px;
+        padding: 8px;
+    }
+    main nav h3 {
+        margin-top: 0px;
+    }
+}
+
+/* desktops */
+@media (768px < width) {
+    nav.mobil {
+        display: none;
+    }
+    nav.dator {
+        /* position: absolute;
+        bottom: 0;
+        right: 0; */
+        border: solid;
+        position: relative;
+        left: 40px;
+        width: 400px;
+        height: 55px;
+    }
+    nav.dator li {
+        list-style-type: none;
+        position: absolute;
+    }
+    nav.dator a {
+        height: 25px;
+        width: 78px;
+        background-color: beige;
+        /* position: absolute; */
+    }
+    nav.dator li:nth-of-type(2) {
+        left: 100px;
+    }
+    nav.dator li:nth-of-type(3) {
+        left: 200px;
+    }
+    nav.dator li:nth-of-type(4) {
+        left: 300px;
+    }
+    body {
+        margin: 8px auto 12px;
+    }
+    main nav {
+        width: 140px;
+        position: absolute;
+        right: -148px;
+        top: 0px;
+    }
+
+}
